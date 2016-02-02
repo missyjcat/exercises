@@ -11,6 +11,8 @@ var TicTacToe = function() {
     }
 
     // creates a 2-dimensional array
+    // JC: also, this should be implicit every time you construct a new
+    // TicTacToe instance, so take out line 2 and remove this.createBoard and just move line 17-20 to line 2. this function you're defining in line 1 runs every time you call new TicTacToe() so construct the board here. you don't need "createBoard"
     this.createBoard = function(number){
         this.board = new Array(number);
         for (var i = 0; i < number; i++){
