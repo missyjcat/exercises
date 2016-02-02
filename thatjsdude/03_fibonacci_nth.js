@@ -19,7 +19,7 @@ function getFibo(number){
       fibo.push(fibo[i - 2] + fibo[i - 1]);
   }
   
-  return fibo[number + 2];
+  return fibo[number];
 }
 
 // do we count 1 twice in fibo sequence?
