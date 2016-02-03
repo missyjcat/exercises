@@ -20,49 +20,48 @@
 // arr = [{},{},{}]
 
 var pairs = {
-    '{': '}',
-    '(': ')',
-    '[': ']'
-  }
+  '{': '}',
+  '(': ')',
+  '[': ']'
+}
 
 function isBalanced(str){
  
   // take the string
   // break it into an array
-  var arr = str.split();  
-  
-  var braces = [];
-  
-  var pop = '';
-  
-  // iterate through array and if an opening is found, then look for the closing
-  // pairs[i].key pairs[i].val
+  var arr = str.split('');  
+  var braces = [];  
   
   for ( var i = 0; i < arr.length; i++ ){
-    // opening: push to braces
-    if (arr[i] in pairs || arr[i]) {
+    // if opening: push to braces
+    if (arr[i] in pairs) {
       // push to new array
       braces.push(arr[i]);
       // we don't need to check anything else
       continue;
     }
     
-    // closing: pop and compare
-    // if current iteration is a value of a key in pairs
-    if (arr[i] === pairs[arr[i]]) {
-      // pop last element
-      var pop = braces.pop();
-      
-      // compare pop with last item in array
-      // is current iteration the value for the pop key
-      if (pairs[pop] !== arr[i]){
-        return false;
+    // check if closing
+    for (var j in pairs){
+    	if (pairs[j] === arr[i]){
+        // value is closing: pop and compare
+        // pop last element
+        var pop = braces.pop();
+        
+        // if there's nothing left to pop
+        if (!pop) {
+        	return false;
+        }
+	
+        // compare pop with last item in array
+        // is key `pop` in pairs the the value for the current iteration in arr
+        if (pairs[pop] !== arr[i]){
+          return false;
+        }
       }
     }
-    
-    // we've made it all the way through, hooray
-    return true;
-    
   }
-  
+  return true;
 }
+
+isBalanced('hello(){}');
