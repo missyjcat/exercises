@@ -41,7 +41,7 @@ function isAnagram(a,b){
       bArray.splice(bIndex,1);
       continue;
     } else {
-      return false
+      return false;
     }
   }
   
