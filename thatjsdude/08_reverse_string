@@ -1,0 +1,19 @@
+// thatjsdude
+// 8. string reverse
+// Question: How would you reverse a string in JavaScript?
+
+// take a string
+// read it backwards and write to new var
+// return var
+
+function reverseString(str){
+  var newString = '';
+  
+  // loop will start at end
+  for (var i = str.length; i > 0; i--){
+    // and concatenate each letter moving backwards to newString
+    newString += str[i - 1];
+  }
+  
+  return newString;
+}
