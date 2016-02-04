@@ -16,7 +16,6 @@
 // array 1 is the subject here
 // this is better than checking arr1[i] against all indexes of arr2
 
-// this solution will not address duplicates
 var arr1 = [1,4,5,6,3,2,3];
 var arr2 = [3,5,6,2,1,4];
 
