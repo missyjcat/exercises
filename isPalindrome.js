@@ -9,7 +9,8 @@
 function isPalindrome(str){
   var len = str.length;
   
-  for ( var i = 0; i < len; i++ ) {
+  // only need to check half the string
+  for ( var i = 0; i < len/2; i++ ) {
     // str[0] str[5-0-1]
     // str[1] str[5-1-1]
     // str[2] str[5-2-1]
