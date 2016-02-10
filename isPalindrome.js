@@ -2,8 +2,7 @@
 // input: string
 // output is true/false
 
-// assuming that word contains no spaces or special characters
-// assuming that case does not matter
+// assuming that word contains no spaces or special characters, and is all lowercase
 
 // compare str[i] with string[len - i]
 
