@@ -14,10 +14,22 @@ build a new string by concatenation
 'Try CoderPad free for seven days'
 how do we eliminate space on first item
 
+Improve
+punctuation
+capital to start
+
 return new string
 */
 
 function reverseString(str) {
+  // drop the captialization at the first char
+  str = str.charAt(0).toLowerCase() + str.slice(1);
+  
+  // store the punctuation at the end
+  // we don't care about punctuation inbtwn
+  // cause the sentence won't make sense anyway
+  var punc = str.charAt(str.length - 1);
+  str = str.substring(0, str.length - 1);
   var arr = str.split(' ');
   var newStr = '';
   
@@ -28,7 +40,16 @@ function reverseString(str) {
     newStr = newStr + arr[i] + ' ';
   }
   
+  // capital to start
+  // clean up string here
+  newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1, newStr.length - 1) + punc;
+  
   return newStr;
 }
 
-console.log(reverseString('Try CoderPad free for seven days'));
+console.log(reverseString('Try CoderPad free for seven days!'));
+
+// O(n)
+// what did I learn?
+// - substring, slice
+// - single out characters with charAt().toBlah()
