@@ -12,6 +12,7 @@
 // iterate through array and write to a hashtable or 2-d array
 // ^ will keep track of the quantity of each
 // [[1],[3,3],[4,4,4,4,4],[5,5,5,5],[6,6,6]
+// ^ can't be sorted anyway
 
 // how to check for 2nd least
 // we know how to get the 'least'
